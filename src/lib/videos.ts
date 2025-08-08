@@ -253,17 +253,18 @@ export const videos: Video[] = [
     uploadDate: '2024-02-18',
     thumbnail: 'https://images.unsplash.com/photo-1489599849619-bf2b41b2cd9a?w=800&h=450&fit=crop'
   },
-  {
-    id: '999',
-    title: 'Test Video',
-    description: 'Bunny.net test videosu',
-    embedId: 'c644a53e-2581-4aa3-babb-af8a155ac6b2',
-    category: 'movies',
-    duration: '5m',
-    views: 0,
-    uploadDate: '2025-08-08',
-    thumbnail: 'https://vz-98744565-2f0.b-cdn.net/c644a53e-2581-4aa3-babb-af8a155ac6b2/thumbnail.jpg'
-  },
+ {
+  id: '999',
+  title: 'Test Video',
+  description: 'Bunny.net test videosu',
+  embedId: '478588/c644a53e-2581-4aa3-babb-af8a155ac6b2',
+  category: 'movies',
+  duration: '5m',
+  views: 0,
+  uploadDate: '2025-08-08',
+  thumbnail: 'https://vz-98744565-2f0.b-cdn.net/c644a53e-2581-4aa3-babb-af8a155ac6b2/thumbnail.jpg'
+}
+  
 ];
 
 export function getVideosByCategory(category?: string): Video[] {
