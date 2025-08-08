@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 9% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  /* Professional typography scale */
+  .text-display {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .text-headline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+
+  .text-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  .text-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  .text-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  .text-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+}
+
+/* Animated glow effect for P letter */
+@keyframes glow-pulse {
+  0%, 100% {
+    color: #ef4444;
+    text-shadow:
+      0 0 5px rgba(239, 68, 68, 0.8),
+      0 0 10px rgba(239, 68, 68, 0.6),
+      0 0 15px rgba(239, 68, 68, 0.4),
+      0 0 20px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    color: #dc2626;
+    text-shadow:
+      0 0 8px rgba(239, 68, 68, 1),
+      0 0 16px rgba(239, 68, 68, 0.8),
+      0 0 24px rgba(239, 68, 68, 0.6),
+      0 0 32px rgba(239, 68, 68, 0.4),
+      0 0 40px rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* Professional logo styles with animated P */
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 2.1rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logo-p {
+  font-weight: 900;
+  margin-right: -0.02em;
+  animation: glow-pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.logo-rest {
+  color: white;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.logo-container:hover {
+  transform: translateY(-1px);
+}
+
+/* Mobile logo adjustments */
+@media (max-width: 767px) {
+  .logo-container {
+    font-size: 1.5rem;
+  }
+}
+
+/* Stylish mobile hamburger categories */
+.mobile-category-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem; /* 1.5x bigger */
+  font-weight: 600;
+  color: #374151;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: linear-gradient(135deg, transparent 0%, rgba(239, 68, 68, 0.02) 100%);
+}
+
+.mobile-category-item:hover {
+  color: #111827;
+  font-weight: 700;
+  padding-left: 1rem;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.1) 100%);
+  border-left: 3px solid #ef4444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-category-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), transparent);
+  transition: width 0.4s ease;
+}
+
+.mobile-category-item:hover::before {
+  width: 100%;
+}
+
+.mobile-category-item .category-arrow {
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.mobile-category-item:hover .category-arrow {
+  transform: translateX(4px);
+  color: #dc2626;
+}
+
+/* Enhanced video title styling */
+.video-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700; /* Much bolder */
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+/* Custom utilities */
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Custom hover state for gray-750 */
+  .hover\:bg-gray-750:hover {
+    background-color: rgb(55 65 81);
+  }
+
+  /* Professional scrollbar styling */
+  .overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Professional shadows */
+  .shadow-professional {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-professional-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-professional-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Video card hover effects with professional transitions - Sharp corners */
+.video-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 !important; /* Sharp corners */
+}
+
+.video-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Video cards matching ad banner width - Extra large */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    padding: 0 0.5rem;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    justify-items: stretch;
+  }
+}
+
+.video-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.video-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Mobile video card hover effects */
+@media (max-width: 767px) {
+  .video-card {
+    border-radius: 0 !important; /* Sharp corners on mobile too */
+  }
+
+  .video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Desktop video card hover effects */
+@media (min-width: 768px) {
+  .video-card:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Professional button styles */
+.btn-professional {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-professional:hover {
+  transform: translateY(-1px);
+}
+
+/* Enhanced typography for content */
+.content-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+  .content-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Professional focus states */
+.focus-professional:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enhanced navigation category styling */
+nav .text-caption {
+  font-weight: 700 !important;
+  font-size: 0.9rem;
+}
+
+/* Category navigation links */
+nav a {
+  font-weight: 700 !important;
+}
+
+/* Enhanced hamburger menu styling */
+.hamburger-menu {
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  padding: 1rem !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: white !important;
+  position: absolute;
+  left: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ef4444 !important;
+  transform: translateY(-50%) scale(1.15) !important;
+}
+
+/* Perfect alignment for mobile header */
+.mobile-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Mobile menu overlay fixes */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+
+.mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  background: white;
+  z-index: 1000;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-panel.open {
+  transform: translateX(0);
+}
+
+/* Prevent body scroll when menu is open */
+.menu-open {
+  overflow: hidden;
+}
+
+/* Full width header fix */
+.header-full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+/* Mobile header positioning fix */
+@media (max-width: 768px) {
+  .mobile-header-inner {
+    position: relative;
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+
+  .logo-container {
+    font-size: 1.8rem;
+    margin-left: 4rem;
+  }
+}
